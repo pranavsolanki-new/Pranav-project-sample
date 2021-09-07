@@ -1,1 +1,65 @@
-<h1>Pranav Solanki</h1>
+
+<div class="row" >
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style ="margin: 15px" *ngFor=" let value of projects" >
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{value.Title}}</h5>
+        <p class="card-text">{{value.Description}}</p>
+        <p class="card-text">{{value.Tags}}</p>
+      
+      </div>
+    </div>
+  </div>
+</div>
+ 
+<i class="far fa-arrow-alt-circle-up"></i>
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+  Launch demo modal
+</button>
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor= 'let group of optionalgroup ; let i = index'>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="title">Add Title</span>
+          <input type="text" name ='Title' [(ngModel)] = 'group.Title'class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>        
+      </div>
+      <div class="modal-body">
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="description"> Add Description</span>
+          <input type="text" name ='Description' [(ngModel)] = 'group.Description'class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>   
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="tags">Add tags</span>
+          <input type="text" name ='Tags' [(ngModel)] = 'group.Tags' class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>  
+        <div class="input-group mb-3">
+          <span class="input-group-text" id="crdate">Creation date</span>
+          <input type="date" name ='Crdate' [(ngModel)] = 'group.Crdate' class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        </div>     
+      </div>  
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" #closebutton data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" (click)='Popupmodel(i,group)'>Save changes</button>
+      </div>
+    </div>
+  </div>
+</div> 
+
+
+
+  
+
+
+
+
+
+
+
+
