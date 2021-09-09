@@ -1,18 +1,21 @@
-
+<h2 >Sort by</h2>
+<button type="button" class="btn btn-primary btn-sm upright" (click)="DateSort()">Creation Date</button>
+<button type="button" class="btn btn-secondary btn-sm upright1" (click)="UpvoteSort()">Upvote Count</button>
 <div class="row" >
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style ="margin: 15px" *ngFor=" let value of projects" >
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style ="margin: 15px" *ngFor="let value of (projects|sortingpipe:Sorting)">
     <div class="card">
       <div class="card-body">
         <h5 class="card-title">{{value.Title}}</h5>
         <p class="card-text">{{value.Description}}</p>
         <p class="card-text">{{value.Tags}}</p>
-      
+        <i (click)="upVote(value)" class="fa fa-thumbs-up">{{value.Count}}</i>
+        <p class="bottomright" >{{value.Crdate}}</p>
       </div>
     </div>
   </div>
 </div>
  
-<i class="far fa-arrow-alt-circle-up"></i>
+
 
 
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
@@ -41,7 +44,7 @@
         </div>  
         <div class="input-group mb-3">
           <span class="input-group-text" id="crdate">Creation date</span>
-          <input type="date" name ='Crdate' [(ngModel)] = 'group.Crdate' class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+          <input type="date" name ='Crdate' placeholder="dd-mm-yyyy" value="" min="1997-01-01" max="2030-12-31"[(ngModel)] = 'group.Crdate' class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
         </div>     
       </div>  
       <div class="modal-footer">

@@ -4,6 +4,32 @@
     user-select: none;
   }
   
-  .fa:hover {
-    color: darkblue;
+  .myClass{
+    color : red;
   }
+  .bottomright {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  h2{
+    position: absolute;
+    right: 70px;
+    font-size: 30px;
+    
+  }
+  .upright {
+    position: absolute;
+    right: 6px;
+    font-size: 18px; 
+    margin-top: 60px;
+  }
+  .upright1 {
+    position: absolute;
+    right: 135px;
+    font-size: 18px;
+    margin-top: 60px;
+  }
+  
