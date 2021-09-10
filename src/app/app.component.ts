@@ -28,11 +28,19 @@ optionalgroup=[{
   Crdate:''
 
 }]
+dropdownvalue =[{"name":"Lifestyle"},{"name":"Technology"},{"name":"Productivity"},{"name":"Simulation"},{"name":"Tools"}]
+  submitted: boolean = false;
+  requiredmsg: any;
 
 constructor(private _hackideaservices: HackIdeaService ) { 
 
 }
 
+selectChangeHandler(event:any,row:any){
+  debugger
+  row.Tags =event.target.value
+  console.log(event.target.value)
+}
 
 ngOnInit() {
   //debugger
@@ -79,15 +87,44 @@ DateSort(){
 UpvoteSort(){
   this.Sorting ='CountSort'
 }
+
+CloseButton()
+{
+  debugger
+  this.optionalgroup=[{
+    Title:'',
+    Description:'',
+    Tags:'',
+    Crdate:''
+  }]
+}
    Popupmodel(index:any,group:any)
   {
-    //debugger
-    this.closebutton.nativeElement.click();
+    debugger
+    this.submitted = true;
+
+    if(group.Title==''|| group.Description =='' || group.Tags=='' || group.Crdate=='')
+    {
+      this.requiredmsg = "Required Field*"
+    }
+   
+    else {
     //console.log(value);
     //this.projects=[];
     let  values ={'Title':group.Title,'Description':group.Description,'Tags':group.Tags,'Crdate':group.Crdate,'Count':0}
     //const datavalue = JSON.parse(values)
    // this.projects.push(values)
-    this.postdata(values)   
+    this.postdata(values) 
+
+    this.optionalgroup=[{
+                          Title:'',
+                          Description:'',
+                          Tags:'',
+                          Crdate:''
+                        }]
+    this.closebutton.nativeElement.click(); 
+    
+  }
+    //this.optionalgroup=[]
   }
 }

@@ -15,7 +15,7 @@ export class SortingpipePipe implements PipeTransform {
       })
       console.log(value)
         value.sort((a:any,b:any) =>{
-       return a.Crdate-b.Crdate;
+       return b.Crdate-a.Crdate;
       })
       value.map((a:any) =>{
         return a.Crdate = a.Crdate.toDateString();
@@ -25,7 +25,7 @@ export class SortingpipePipe implements PipeTransform {
     }  
     if(args=='CountSort'){
       value.sort((a:any,b:any) =>{
-       return a.Count-b.Count;
+       return b.Count-a.Count;
       })
       console.log(value);
       return value
