@@ -20,6 +20,7 @@ export class AppComponent {
   Count:any;
   Sorting='pranav';
  @ViewChild('closebutton') closebutton:any;
+  empId='';
 
 optionalgroup=[{
   Title:'',
@@ -43,10 +44,17 @@ selectChangeHandler(event:any,row:any){
 }
 
 ngOnInit() {
-  //debugger
- 
   this.getdata();
-
+}
+  promptbox(){
+   let person = prompt("Please enter your name:", "Harry Potter");
+  if (person == null || person == "") {
+    let text = "User cancelled the prompt.";
+    console.log(text)
+  } else {
+    this.empId = person ;
+    console.log(this.empId)
+  }
 }
 getdata()
 {
@@ -72,6 +80,12 @@ updatedata(id:number,values:any){
 upVote(value:any)
 {
   debugger
+
+  if(this.empId =='')
+  {
+    this.promptbox()
+  }
+
   //this.isClicked=true;
   value.Count= value.Count+1;
 
@@ -98,9 +112,22 @@ CloseButton()
     Crdate:''
   }]
 }
+
+modelopen()
+{
+  if(this.empId =='')
+  {
+    this.promptbox()
+  }
+}
    Popupmodel(index:any,group:any)
   {
     debugger
+
+    if(this.empId =='')
+  {
+    this.promptbox()
+  }
     this.submitted = true;
 
     if(group.Title==''|| group.Description =='' || group.Tags=='' || group.Crdate=='')

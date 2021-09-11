@@ -5,7 +5,7 @@
       "Description": "This application will help the user to cook something, even if he does not know the recipe. It is necessary to describe the available ingredients, and the application will show the corresponding dish that can be prepared from this set of products.",
       "Tags": "LifeStyle",
       "Crdate": "Sun Aug 15 2021",
-      "Count": 10,
+      "Count": 11,
       "id": 1
     },
     {
@@ -141,7 +141,7 @@
       "Description": "dfsgd",
       "Tags": "fdgd",
       "Crdate": "2021-09-08",
-      "Count": 0,
+      "Count": 2,
       "id": 25
     },
     {
@@ -151,6 +151,14 @@
       "Crdate": "2021-09-08",
       "Count": 0,
       "id": 26
+    },
+    {
+      "Title": "ptanab sole  ",
+      "Description": "sfsfsnf s sdjs fs f ",
+      "Tags": "Technology",
+      "Crdate": "2021-09-11",
+      "Count": 0,
+      "id": 27
     }
   ]
 }

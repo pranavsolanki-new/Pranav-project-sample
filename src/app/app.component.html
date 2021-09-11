@@ -1,3 +1,5 @@
+
+<h1>{{empId}}</h1>
 <h2 >Sort by</h2>
 <button type="button" class="btn btn-primary btn-sm upright" (click)="DateSort()">Creation Date</button>
 <button type="button" class="btn btn-secondary btn-sm upright1" (click)="UpvoteSort()">Upvote Count</button>
@@ -14,12 +16,13 @@
     </div>
   </div>
 </div>
+
+
+
+
  
 
-
-
-
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" >
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="modelopen()"data-bs-target="#exampleModal" >
   Launch demo modal
 </button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor= 'let group of optionalgroup ; let i = index'>

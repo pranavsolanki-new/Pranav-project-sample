@@ -21,7 +21,7 @@ export class SortingpipePipe implements PipeTransform {
         return a.Crdate = a.Crdate.toDateString();
        })
       console.log(value);
-      return value
+      return value 
     }  
     if(args=='CountSort'){
       value.sort((a:any,b:any) =>{
