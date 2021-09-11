@@ -1,6 +1,7 @@
-
-<h1>{{empId}}</h1>
-<h2 >Sort by</h2>
+<h1><span class="badge bg-secondary">HACK IDEA</span></h1>
+<h2 style="margin-top:28px;">EmpId:{{empId}}</h2>
+<button type="button" class="btn btn-primary upright2" data-bs-toggle="modal" (click)="modelopen()"data-bs-target="#exampleModal">Add New Task</button>
+<h2 style="margin-top: 115px;">Sort by</h2>
 <button type="button" class="btn btn-primary btn-sm upright" (click)="DateSort()">Creation Date</button>
 <button type="button" class="btn btn-secondary btn-sm upright1" (click)="UpvoteSort()">Upvote Count</button>
 <div class="row" >
@@ -9,22 +10,15 @@
       <div class="card-body">
         <h5 class="card-title">{{value.Title}}</h5>
         <p class="card-text">{{value.Description}}</p>
-        <p class="card-text">{{value.Tags}}</p>
+        <p class="card-text"><b>Tag: </b>{{value.Tags}}</p>
         <i (click)="upVote(value)" class="fa fa-thumbs-up">{{value.Count}}</i>
         <p class="bottomright" >{{value.Crdate}}</p>
       </div>
     </div>
   </div>
 </div>
-
-
-
-
  
 
-<button type="button" class="btn btn-primary" data-bs-toggle="modal" (click)="modelopen()"data-bs-target="#exampleModal" >
-  Launch demo modal
-</button>
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor= 'let group of optionalgroup ; let i = index'>
   <div class="modal-dialog">
     <div class="modal-content">
@@ -45,7 +39,7 @@
          
         <div class="input-group mb-3">
           <span class="input-group-text" id="tags">Add tags*</span>         
-            <select (change)="selectChangeHandler($event,group)">
+            <select (change)="selectChangeHandler($event,group)"class="form-select form-select-sm" aria-label=".form-select-sm example">
               <option [value]= "value.name" *ngFor = "let value of dropdownvalue">{{value.name}}</option>
           </select> 
           <input type="text" name ='Tags' [(ngModel)] = 'group.Tags' class="form-control"  aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" #Tags="ngModel" required>
@@ -65,6 +59,7 @@
     </div>
   </div>
 </div> 
+
 
 
 

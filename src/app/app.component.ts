@@ -47,14 +47,15 @@ ngOnInit() {
   this.getdata();
 }
   promptbox(){
-   let person = prompt("Please enter your name:", "Harry Potter");
+   let person = prompt("Please enter your EmployeeId:");
   if (person == null || person == "") {
-    let text = "User cancelled the prompt.";
-    console.log(text)
+    alert ("You cancelled button")
+    this.promptbox()
   } else {
     this.empId = person ;
     console.log(this.empId)
   }
+  
 }
 getdata()
 {
