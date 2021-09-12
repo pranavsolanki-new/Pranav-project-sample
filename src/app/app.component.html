@@ -1,12 +1,12 @@
-<h1><span class="badge bg-secondary">HACK IDEA</span></h1>
-<h2 style="margin-top:28px;">EmpId:{{empId}}</h2>
+<h1 style="margin-top:10px;"><span class="badge bg-secondary">HACK IDEA</span></h1>
+<h2 style="margin-top:-50px; left:6px;text-shadow:2px 2px 4px #000000">EmpId:{{empId}}</h2>
 <button type="button" class="btn btn-primary upright2" data-bs-toggle="modal" (click)="modelopen()"data-bs-target="#exampleModal">Add New Task</button>
-<h2 style="margin-top: 115px;">Sort by</h2>
+<h2 style="margin-top: -80px ; "><span class="badge bg-secondary light">Sort by</span></h2>
 <button type="button" class="btn btn-primary btn-sm upright" (click)="DateSort()">Creation Date</button>
 <button type="button" class="btn btn-secondary btn-sm upright1" (click)="UpvoteSort()">Upvote Count</button>
 <div class="row" >
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style ="margin: 15px" *ngFor="let value of (projects|sortingpipe:Sorting)">
-    <div class="card">
+  <div  class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style ="margin: 15px" *ngFor="let value of (projects|sortingpipe:Sorting)">
+    <div class="card shadow p-3 mb-5 bg-body rounded" >
       <div class="card-body">
         <h5 class="card-title">{{value.Title}}</h5>
         <p class="card-text">{{value.Description}}</p>
@@ -17,7 +17,6 @@
     </div>
   </div>
 </div>
- 
 
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" *ngFor= 'let group of optionalgroup ; let i = index'>
   <div class="modal-dialog">
