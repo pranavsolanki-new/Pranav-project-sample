@@ -46,7 +46,8 @@ selectChangeHandler(event:any,row:any){
 ngOnInit() {
   this.getdata();
 }
-  promptbox(){
+
+promptbox(){
    let person = prompt("Please enter your EmployeeId:");
   if (person == null || person == "") {
     alert ("You cancelled button")
@@ -54,9 +55,9 @@ ngOnInit() {
   } else {
     this.empId = person ;
     console.log(this.empId)
-  }
-  
+  }  
 }
+
 getdata()
 {
   this._hackideaservices.jsondata().subscribe((data1)=>{
@@ -65,6 +66,7 @@ getdata()
     console.log(this.projects);
   });
 }
+
 postdata(values:any){
   this._hackideaservices.addTask(values).subscribe((data)=>{
     //debugger
@@ -72,33 +74,29 @@ postdata(values:any){
    this.getdata();
    }); 
 }
+
 updatedata(id:number,values:any){
   this._hackideaservices.UpdateTask(id,values).subscribe((data2)=>{
     console.log(data2);
     this.getdata();
   });
 }
+
 upVote(value:any)
 {
-  debugger
-
   if(this.empId =='')
   {
     this.promptbox()
   }
-
-  //this.isClicked=true;
   value.Count= value.Count+1;
-
   let UpvoteValue ={'Title':value.Title,'Description':value.Description,'Tags':value.Tags,'Crdate':value.Crdate,'Count':value.Count}
-  this.updatedata(value.id,UpvoteValue);
-    
-  //let upvoteVal ={'Count':value.Count}
-  //this.postdata(upvoteVal);
+  this.updatedata(value.id,UpvoteValue); 
 }
+
 DateSort(){
   this.Sorting ='DateSort'
 }
+
 UpvoteSort(){
   this.Sorting ='CountSort'
 }
@@ -121,10 +119,9 @@ modelopen()
     this.promptbox()
   }
 }
-   Popupmodel(index:any,group:any)
-  {
-    debugger
 
+Popupmodel(index:any,group:any)
+  {
     if(this.empId =='')
   {
     this.promptbox()
@@ -137,11 +134,9 @@ modelopen()
     }
    
     else {
-    //console.log(value);
-    //this.projects=[];
+    
     let  values ={'Title':group.Title,'Description':group.Description,'Tags':group.Tags,'Crdate':group.Crdate,'Count':0}
-    //const datavalue = JSON.parse(values)
-   // this.projects.push(values)
+  
     this.postdata(values) 
 
     this.optionalgroup=[{
@@ -153,6 +148,6 @@ modelopen()
     this.closebutton.nativeElement.click(); 
     
   }
-    //this.optionalgroup=[]
+  
   }
 }

@@ -4,7 +4,7 @@
       "Title": "Cooking",
       "Description": "This application will help the user to cook something, even if he does not know the recipe. It is necessary to describe the available ingredients, and the application will show the corresponding dish that can be prepared from this set of products.",
       "Tags": "LifeStyle",
-      "Crdate": "Sun Aug 15 2021",
+      "Crdate": "2021-08-15",
       "Count": 11,
       "id": 1
     },
@@ -21,7 +21,7 @@
       "Description": "This app is designed to help you design your living space. The user photographs the room and applies various designs, patterns, and elements to the picture, achieving the ideal room.",
       "Tags": "Simulation",
       "Crdate": "2021-08-30",
-      "Count": 7,
+      "Count": 8,
       "id": 3
     },
     {
@@ -116,7 +116,7 @@
       "Title": "MishiPay Software Engineer Hiring Challenge",
       "Description": "A unique national platform to showcase your innovative spirit and present out-of-the box solutions to our acclaimed Jury in the finals.",
       "Tags": "Technology",
-      "Crdate": "Fri Sep 10 2021",
+      "Crdate": "2021-09-10",
       "Count": 2,
       "id": 15
     },
@@ -143,6 +143,14 @@
       "Crdate": "2021-09-08",
       "Count": 2,
       "id": 25
+    },
+    {
+      "Title": "Pranav Solanki",
+      "Description": "Pranav Solanki..................................................................................................................................................................................................................................................................................................",
+      "Tags": "Technology",
+      "Crdate": "2021-09-13",
+      "Count": 0,
+      "id": 26
     }
   ]
 }
